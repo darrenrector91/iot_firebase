@@ -5,11 +5,11 @@ var port = process.env.PORT || 5000;
 
 // FIREBASE Initializaton 
 var admin = require('firebase-admin');
-var serviceAccount = require('./ds18b20-3f71f-firebase-adminsdk-60ps0-015e5d7523.json');
-admin.initializeApp({
-    credential: admin.credential.cert(serviceAccount),
-    databaseURL: 'https://ds18b20-3f71f.firebaseio.com/'
-});
+// var serviceAccount = require('./ds18b20-3f71f-firebase-adminsdk-60ps0-015e5d7523.json');
+// admin.initializeApp({
+//     credential: admin.credential.cert(serviceAccount),
+//     databaseURL: 'https://ds18b20-3f71f.firebaseio.com/'
+// });
 
 
 
