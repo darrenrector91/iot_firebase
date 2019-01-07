@@ -9,12 +9,12 @@
 
     <link rel="stylesheet" href="css/main.css">
 
-
 </head>
 
 <body>
     <h1 class="titleText">IOT Realtime Chart</h1>
-    <canvas id="iotChart" width="200" height="50px"></canvas>
+    <!-- <canvas id="iotChart" width="200" height="50px"></canvas> -->
+    <div id="iotChart" style="width: 100vw; max-height:75vh"></div>
 
 
 
@@ -42,8 +42,13 @@
     <!-- SCRIPTS -->
     <script src="js/jquery.min.js"></script>
     <script src="js/client.js"></script>
-    <script src="vendors/Chart.js"></script>
-    <script src="js/chart.js"></script>
+    <!-- <script src="vendors/Chart.js"></script> -->
+    <!-- <script src="js/chart.js"></script> -->
+    <!-- Include Plotly.js -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <!-- Include the moment.js library -->
+    <script src="https://momentjs.com/downloads/moment.js"></script>
+    <script src="js/plot.js"></script>
 </body>
 
 </html>
