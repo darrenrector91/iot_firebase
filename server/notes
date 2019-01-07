@@ -1,0 +1,9 @@
+// Get a reference to the database service
+    var database = firebase.database();
+    var dataRef = database.ref('measurements');
+
+    return firebase.database().ref('measurements').once('value').then(function (snapshot) {
+        var username = (snapshot.val());
+        console.log(username);
+
+    });
