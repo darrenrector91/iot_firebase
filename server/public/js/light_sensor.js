@@ -1,8 +1,8 @@
 $(document).ready(function () {
 
-    const nbOfElts = 10;
+    const nbOfElts = 100;
 
-    firebase.database().ref('timestamped_measurements').limitToLast(nbOfElts).on('value', ts_measures => {
+    firebase.database().ref('light_timestamped').limitToLast(nbOfElts).on('value', ts_measures => {
         // If you want to get into details, read the following comments :-)
         // 'ts_measures' is a snapshot raw Object, obtained on changed value of 'timestamped_measures' node
         // e.g. a new push to that node, but is not exploitable yet.
@@ -15,8 +15,7 @@ $(document).ready(function () {
         let timestamps = [];
         let values = [];
 
-        console.log(timestamps);
-
+        // console.log(timestamps);
 
         // Next, we iterate on each element of the 'ts_measures' raw Object
         // in order to fill the arrays.
@@ -29,13 +28,13 @@ $(document).ready(function () {
         // which is an Epoch time in milliseconds, is converted to human date
         // thanks to the moment().format() function coming from the moment.js library.    
         ts_measures.forEach(ts_measure => {
-            console.log(ts_measure.val().timestamp, ts_measure.val().value);
+            // console.log(ts_measure.val().timestamp, ts_measure.val().value);
             timestamps.push(moment(ts_measure.val().timestamp).format('YYYY-MM-DD HH:mm'));
             values.push(ts_measure.val().value);
         });
 
         // Get a reference to the DOM node that welcomes the plot drawn by Plotly.js:
-        myPlotDiv = document.getElementById('iotChart');
+        myPlotDiv = document.getElementById('lightChart');
 
         // We generate x and y data necessited by Plotly.js to draw the plot
         // and its layout information as well:
@@ -46,21 +45,26 @@ $(document).ready(function () {
         }];
 
         const layout = {
-            title: '<b>Luminosity live plot</b>',
             titlefont: {
                 family: 'Courier New, monospace',
                 size: 16,
                 color: '#000'
             },
             xaxis: {
+                title: '<b>Date/Time</b>',
                 linecolor: 'black',
-                linewidth: 2
-            },
-            yaxis: {
-                title: '<b>10-bit value</b>',
+                linewidth: 2,
                 titlefont: {
                     family: 'Courier New, monospace',
-                    size: 14,
+                    size: 18,
+                    color: '#000'
+                }
+            },
+            yaxis: {
+                title: '<b>Light Level(0 - 1024)</b>',
+                titlefont: {
+                    family: 'Courier New, monospace',
+                    size: 18,
                     color: '#000'
                 },
                 linecolor: 'black',
@@ -71,7 +75,7 @@ $(document).ready(function () {
                 pad: 0
             }
         }
-        // At last we plot data :-)
+        // Plot above data
         Plotly.newPlot(myPlotDiv, data, layout, { responsive: true });
     });
 
