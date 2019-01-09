@@ -32,7 +32,13 @@ body {
 #map {
     height: 300px;  /* The height is 400 pixels */
     width: 400px;  /* The width is the width of the web page */
-   }
+}
+
+.temp_gauge {
+    margin-left: 47px !important;
+    margin-top: 40px !important;
+
+}
 
 
 
