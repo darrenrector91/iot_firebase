@@ -16,6 +16,7 @@
     "firebase": "^5.7.2",
     "firebase-admin": "^6.4.0",
     "jquery": "^3.3.1",
+    "just-gauge": "0.0.1",
     "nodemon": "^1.18.9",
     "plotly": "^1.0.6",
     "requirejs": "^2.3.6"

@@ -45,11 +45,18 @@ $(document).ready(function () {
         }];
 
         const layout = {
+            title: {
+                text: '<b>ds18b20 - Temperature Sensor</b>'
+            },
             titlefont: {
                 family: 'Courier New, monospace',
                 size: 16,
                 color: '#000'
             },
+            // plot_bgcolor: '#000',
+            // paper_bgcolor: '#696969',
+            width: 400,
+            height: 300,
             xaxis: {
                 // title: '<b>Date/Time</b>',
                 linecolor: 'black',

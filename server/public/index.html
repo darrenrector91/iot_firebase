@@ -9,7 +9,7 @@
 
     <link rel="stylesheet" href="css/main.css">
     <link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono" rel="stylesheet">
-    <!-- Latest compiled and minified CSS -->
+    <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
         crossorigin="anonymous">
 
@@ -17,51 +17,33 @@
 </head>
 
 <body>
-    <script>
+    <div class="container">
+        <h1 class="titleText">ESP8266 Sensor Data</h1>
+        <div class="wrapper">
+            <div id="lightChart" class="sensorChart"></div>
+            <div id="tempChart" class="sensorChart"></div>
+        </div>
 
-    </script>
-
-    <h1 class="titleText">ESP8266 Sensor Data</h1>
-    <div class="wrapper">
-        <div id="lightChart"></div>
     </div>
-    <div class="wrapper">
-        <div id="tempChart"></div>
-    </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
     <!-- Firebase -->
     <script src="https://www.gstatic.com/firebasejs/5.7.2/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.7.2/firebase-database.js"></script>
-    <script src="js/firebase.js"></script>
-
-    <!-- SCRIPTS -->
-    <script src="js/jquery.min.js"></script>
+    <script src="vendors/firebase.js"></script>
+    <!-- Scripts -->
+    <script src="vendors/jquery.min.js"></script>
     <script src="js/temp_sensor.js"></script>
     <script src="js/light_sensor.js"></script>
-    <!-- Include Plotly.js -->
+    <script src="js/test.js"></script>
+    <!-- Plotly.js -->
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-    <!-- Include the moment.js library -->
+    <!-- Chartjs -->
+    <script src="vendors/Chart.js"></script>
+    <!-- Moment.js  -->
     <script src="https://momentjs.com/downloads/moment.js"></script>
-    <script src="js/plot.js"></script>
-    <!-- BOOTSTRAP -->
+    <!-- Bootstrap -->
     <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
 
 </body>

@@ -45,13 +45,18 @@ $(document).ready(function () {
         }];
 
         const layout = {
+            title: {
+                text: '<b>Light Level Sensor</b>'
+            },
             titlefont: {
                 family: 'Courier New, monospace',
                 size: 16,
                 color: '#000'
             },
+            width: 400,
+            height: 300,
             xaxis: {
-                title: '<b>Date/Time</b>',
+                // title: '<b>Date/Time</b>',
                 linecolor: 'black',
                 linewidth: 2,
                 titlefont: {
@@ -64,7 +69,7 @@ $(document).ready(function () {
                 title: '<b>Light Level(0 - 1024)</b>',
                 titlefont: {
                     family: 'Courier New, monospace',
-                    size: 18,
+                    size: 12,
                     color: '#000'
                 },
                 linecolor: 'black',

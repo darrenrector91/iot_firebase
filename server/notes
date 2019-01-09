@@ -29,3 +29,42 @@
 
     var length = sensorData.length;
     console.log(length);
+
+
+colors: ['rgb(221, 8, 8)', 'rgb(221, 76, 8)', 'rgb(34, 175, 21)', 'rgb(172, 202, 249)', 'rgb(23, 111, 198)', 'rgb(19, 48, 163)', '']
+
+body {
+    background-color: rgb(233, 233, 233) !important;
+    margin: 40px;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 600px 600px;  
+    grid-gap: 10px;
+}
+
+.banner {
+    height: 120px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid grey;
+}
+
+.titleText {
+    text-align: center;
+    font-size: 40px;
+    font-family: 'Share Tech Mono', monospace;
+
+}
+
+.sensorChart {
+    width: 600px;
+    margin-top: 40px;
+    box-shadow: 4px 5px 13px darkgrey;
+    border: 1px solid lightgrey;
+}
+
+
+
+
+
