@@ -53,8 +53,6 @@ $(document).ready(function () {
                 size: 16,
                 color: '#000'
             },
-            // plot_bgcolor: '#000',
-            // paper_bgcolor: '#696969',
             width: 400,
             height: 300,
             xaxis: {
