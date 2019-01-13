@@ -46,6 +46,10 @@ body {
 
 }
 
+.modebar {
+    display: none !important;
+}
+
 
 
 
