@@ -2,7 +2,7 @@ $(document).ready(function () {
 
     const nbOfElts = 100;
 
-    firebase.database().ref('soilMoisture_timestamped').limitToLast(nbOfElts).on('value', ts_measures => {
+    firebase.database().ref('soil_moisture_timestamped').limitToLast(nbOfElts).on('value', ts_measures => {
         // If you want to get into details, read the following comments :-)
         // 'ts_measures' is a snapshot raw Object, obtained on changed value of 'timestamped_measures' node
         // e.g. a new push to that node, but is not exploitable yet.
@@ -15,8 +15,8 @@ $(document).ready(function () {
         let timestamps = [];
         let values = [];
 
-        // console.log(timestamps);
-        // console.log(values);
+        console.log(timestamps);
+        console.log(values);
 
         // Next, we iterate on each element of the 'ts_measures' raw Object
         // in order to fill the arrays.

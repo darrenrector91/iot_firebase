@@ -1,8 +1,10 @@
 $(document).ready(function () {
 
+    // firebase deploy --only functions
+
     const nbOfElts = 100;
 
-    firebase.database().ref('temp_timestamped').limitToLast(nbOfElts).on('value', ts_measures => {
+    firebase.database().ref('temperature_timestamped').limitToLast(nbOfElts).on('value', ts_measures => {
         // If you want to get into details, read the following comments :-)
         // 'ts_measures' is a snapshot raw Object, obtained on changed value of 'timestamped_measures' node
         // e.g. a new push to that node, but is not exploitable yet.

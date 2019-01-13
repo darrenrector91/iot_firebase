@@ -2,11 +2,13 @@ $(document).ready(function () {
 
     const records = 1;
 
-    firebase.database().ref('temp_timestamped').limitToLast(records).on('value', ts_measures => {
+    firebase.database().ref('temperature_timestamped').limitToLast(records).on('value', ts_measures => {
         // let values = [];
 
         ts_measures.forEach(ts_measure => {
             temp = ts_measure.val().value;
+            console.log(temp);
+
             // values.push(ts_measure.val().value);
         });
 
