@@ -16,6 +16,7 @@ $(document).ready(function () {
         let values = [];
 
         // console.log(timestamps);
+        // console.log(values);
 
         // Next, we iterate on each element of the 'ts_measures' raw Object
         // in order to fill the arrays.
