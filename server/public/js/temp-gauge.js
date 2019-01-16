@@ -15,7 +15,7 @@ $(document).ready(function () {
 
             var mydata = google.visualization.arrayToDataTable([
                 ['Label', 'Value'],
-                ['', temp],
+                ['˚F', temp],
             ]);
 
             var myoptions = {
