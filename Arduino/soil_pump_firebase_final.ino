@@ -1,7 +1,5 @@
 // system_profiler SPUSBDataType
 
-/Users/darrenrector/Library/Arduino15/packages/esp8266/hardware/esp8266/2.5.0-beta2/libraries/ESP8266WebServer/src/ESP8266WebServer.h
-
 #include <ESP8266WiFi.h>
 #include <FirebaseArduino.h>
 #include <ESP8266HTTPClient.h>
