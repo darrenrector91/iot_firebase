@@ -6,9 +6,9 @@
 #include <DNSServer.h>
 #include <ESP8266WebServer.h>
 
-#define WIFI_SSID "SKYNET"
-#define WIFI_PASSWORD "Rubyred3554"
-#define FIREBASE_HOST "ds18b20-3f71f.firebaseio.com"
+#define WIFI_SSID "*********"
+#define WIFI_PASSWORD "**********"
+#define FIREBASE_HOST "********.firebaseio.com"
 #define MOISTURE "soil_moisture"
 #define READSOILPIN A0
 #define MAXDRYNESS 200 // higher number is more dry
@@ -16,7 +16,7 @@
 #define WATERPOSTDELAY 5000
 
 // IFTTT url string with API key
-const char *resource = "https://maker.ifttt.com/trigger/soil_moisture/with/key/ixyxIDv2VzbbEqS4TmTggnv50i0rHoNi1LuIBjkMAAk";
+const char *resource = "https://maker.ifttt.com/trigger/soil_moisture/with/key/{FIREBASE_KEY}";
 
 // Maker Webhooks IFTTT
 const char *server = "maker.ifttt.com";
