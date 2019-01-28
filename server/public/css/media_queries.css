@@ -1,0 +1,75 @@
+@media only screen and (max-width: 600px) {
+  body {
+    background-color: rgb(233, 233, 233) !important;
+    margin: 40px;
+  }
+
+  .wrapper {
+    display: grid;
+    grid-template-columns: 400px;
+    grid-gap: 10px;
+  }
+
+  .wrapper2 {
+    display: grid;
+    grid-template-columns: 400px;
+    grid-gap: 10px;
+  }
+
+  .banner {
+    height: 120px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid grey;
+  }
+
+  .titleText {
+    text-align: center;
+    font-size: 40px;
+    font-family: "Share Tech Mono", monospace;
+  }
+
+  .sensorChart {
+    width: 400px;
+    margin-top: 40px;
+    box-shadow: 4px 5px 13px darkgrey;
+    border: 1px solid lightgrey;
+  }
+
+  #map {
+    display: grid;
+    grid-template-columns: 400px;
+    grid-gap: 10px;
+    margin-bottom: 50px;
+  }
+
+  .temp_gauge {
+    margin-left: 47px !important;
+    margin-top: 40px !important;
+  }
+
+  .modebar {
+    display: none !important;
+  }
+
+  .ledBtn {
+    width: 200px;
+    height: 50px;
+    border-radius: 5px;
+    box-shadow: 3px 2px 2px grey;
+    margin: 20px 90px 0 90px;
+    color: rgb(231, 229, 229);
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+
+  .onBtn {
+    background-color: firebrick;
+    border: 2px solid firebrick;
+  }
+
+  .offBtn {
+    background-color: green;
+    border: 2px solid green;
+    margin-top: 10px;
+  }
+}

@@ -7,6 +7,7 @@
     <title>IOT Realtime Chart</title>
 
     <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/media_queries.css" />
     <link
       href="https://fonts.googleapis.com/css?family=Share+Tech+Mono"
       rel="stylesheet"
@@ -38,14 +39,6 @@
       <h1 class="titleText">ESP8266 Sensor Data</h1>
       <div id="pumpOn"></div>
       <div id="pumpOff"></div>
-
-      <!-- <button class="ledBtn onBtn" id="pumpOn" onclick="pumpOn()" value="">
-        PUMP ON
-      </button>
-      <button class="ledBtn offBtn" id="pumpOff" onclick="pumpOff()" value="">
-        PUMP OFF
-      </button> -->
-
       <div class="wrapper">
         <div id="lightChart" class="sensorChart"></div>
         <div id="chart_div" class="temp_gauge"></div>
@@ -81,6 +74,5 @@
       defer
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAn329K964J5-Koo43JrzUKgtvXFPzzXkM&callback=initMap"
     ></script>
-    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
   </body>
 </html>
