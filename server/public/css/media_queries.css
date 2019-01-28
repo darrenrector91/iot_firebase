@@ -1,4 +1,4 @@
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 411px) {
   body {
     background-color: rgb(233, 233, 233) !important;
     margin: 40px;
@@ -7,13 +7,13 @@
   .wrapper {
     display: grid;
     grid-template-columns: 400px;
-    grid-gap: 10px;
+    /* grid-gap: 10px; */
   }
 
   .wrapper2 {
     display: grid;
     grid-template-columns: 400px;
-    grid-gap: 10px;
+    /* grid-gap: 10px; */
   }
 
   .banner {
@@ -38,7 +38,7 @@
   #map {
     display: grid;
     grid-template-columns: 400px;
-    grid-gap: 10px;
+    /* grid-gap: 10px; */
     margin-bottom: 50px;
   }
 
