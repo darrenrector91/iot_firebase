@@ -1,58 +1,71 @@
 body {
-    background-color: rgb(233, 233, 233) !important;
-    margin: 40px;
+  background-color: rgb(233, 233, 233) !important;
+  margin: 40px;
 }
 
 .wrapper {
-    display: grid;
-    grid-template-columns: 400px 400px 400px;  
-    grid-gap: 10px;
+  display: grid;
+  grid-template-columns: 400px 400px 400px;
+  grid-gap: 10px;
 }
 
 .wrapper2 {
-    display: grid;
-    grid-template-columns: 400px 400px 400px;  
-    grid-gap: 10px;
+  display: grid;
+  grid-template-columns: 400px 400px 400px;
+  grid-gap: 10px;
 }
 
 .banner {
-    height: 120px;
-    margin-bottom: 20px;
-    border-bottom: 2px solid grey;
+  height: 120px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid grey;
 }
 
 .titleText {
-    text-align: center;
-    font-size: 40px;
-    font-family: 'Share Tech Mono', monospace;
-
+  text-align: center;
+  font-size: 40px;
+  font-family: "Share Tech Mono", monospace;
 }
 
 .sensorChart {
-    width: 400px;
-    margin-top: 40px;
-    box-shadow: 4px 5px 13px darkgrey;
-    border: 1px solid lightgrey;
+  width: 400px;
+  margin-top: 40px;
+  box-shadow: 4px 5px 13px darkgrey;
+  border: 1px solid lightgrey;
 }
 
 #map {
-    height: 300px;  /* The height is 400 pixels */
-    width: 400px;  /* The width is the width of the web page */
+  height: 300px; /* The height is 400 pixels */
+  width: 400px; /* The width is the width of the web page */
 }
 
 .temp_gauge {
-    margin-left: 47px !important;
-    margin-top: 40px !important;
-
+  margin-left: 47px !important;
+  margin-top: 40px !important;
 }
 
 .modebar {
-    display: none !important;
+  display: none !important;
 }
 
+.ledBtn {
+  width: 100px;
+  height: 50px;
+  border-radius: 5px;
+  box-shadow: 3px 2px 2px grey;
+  margin: 0 10px;
+  color: rgb(231, 229, 229);
+  font-weight: bold;
+  letter-spacing: 1px;
+}
 
+.onBtn {
+  background-color: firebrick;
+  border: 2px solid firebrick;
+}
 
-
-
-
-
+.offBtn {
+  background-color: green;
+  border: 2px solid green;
+  margin-top: 10px;
+}
