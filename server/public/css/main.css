@@ -3,6 +3,10 @@ body {
   margin: 40px;
 }
 
+.container {
+  width: 1252px !important;
+}
+
 .wrapper {
   display: grid;
   grid-template-columns: 400px 400px 400px;

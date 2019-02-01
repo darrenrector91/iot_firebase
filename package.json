@@ -13,11 +13,13 @@
   "dependencies": {
     "bootstrap-switch": "^3.3.4",
     "chart.js": "^2.7.3",
+    "chartjs": "^0.3.24",
     "express": "^4.16.4",
     "firebase": "^5.7.3",
     "firebase-admin": "^6.5.0",
     "jquery": "^3.3.1",
     "just-gauge": "0.0.1",
+    "kendo-ui-core": "^2019.1.115",
     "nodemon": "^1.18.9",
     "plotly": "^1.0.6",
     "requirejs": "^2.3.6"

@@ -6,25 +6,23 @@
 #include <DNSServer.h>
 #include <ESP8266WebServer.h>
 
-#define WIFI_SSID "*******"
+#define WIFI_SSID "********"
 #define WIFI_PASSWORD "*******"
-#define FIREBASE_HOST "*******-*****.firebaseio.com"
+#define FIREBASE_HOST "***-*********-******.firebaseio.com"
 #define MOISTURE "soil_moisture"
 #define READSOILPIN A0
-#define MAXDRYNESS 200 // higher number is more dry
-#define WATERDELAY 750
-#define WATERPOSTDELAY 5000
 
 //Set timing values
-const long interval = 10000;
+const long interval = 300000;
 unsigned long previousMillis = 0;
 
 // IFTTT url string with API key
-const char *resource = "https://maker.ifttt.com/trigger/soil_moisture/with/key/{{REPLACE WITH YOUR FIREBASE KEY}}";
+const char *resource = "https://maker.ifttt.com/trigger/soil_moisture/with/key/**************";
 
 // Maker Webhooks IFTTT
 const char *server = "maker.ifttt.com";
 
+// Pin assignments
 int redPin = 16;
 int grnPin = 14;
 int PUMP = 5;
@@ -66,6 +64,9 @@ void setup()
 
 void loop()
 {
+    // get value
+    n = Firebase.getInt("PUMP_STATUS");
+
     unsigned long currentMillis = millis();
 
     if (currentMillis - previousMillis >= interval)
@@ -73,32 +74,6 @@ void loop()
         previousMillis = currentMillis;
 
         water();
-    }
-}
-
-void water()
-{
-
-    int soil_moisture = analogRead(READSOILPIN); //connect sensor to A0
-    Serial.println("");
-    Serial.println("soil moisture ");
-    Serial.print(soil_moisture); //print the value to serial port
-
-    // get value from Firebase
-    n = Firebase.getInt("PUMP_STATUS");
-
-    if (soil_moisture <= 600)
-    {
-        digitalWrite(grnPin, LOW);
-        digitalWrite(redPin, HIGH);
-        digitalWrite(PUMP, HIGH);
-    }
-    else
-    {
-        digitalWrite(grnPin, HIGH);
-        digitalWrite(redPin, LOW);
-        digitalWrite(PUMP, LOW);
-
         if (n == 1)
         {
             Serial.println("");
@@ -108,14 +83,34 @@ void water()
         }
         else
         {
-            Serial.println("");
-            Serial.println("PUMP OFF");
-            Serial.print("");
             digitalWrite(PUMP, LOW);
             return;
         }
     }
-    // Push to Firebase Realtime Database
+}
+
+void water()
+{
+    int soil_moisture = analogRead(READSOILPIN); //connect sensor to A0
+    Serial.println("");
+    Serial.println("soil moisture ");
+    Serial.print(soil_moisture); //print the value to serial port
+
+    if (soil_moisture <= 600)
+    {
+        digitalWrite(grnPin, LOW);
+        digitalWrite(redPin, HIGH);
+        digitalWrite(PUMP, HIGH);
+        makeIFTTTRequest();
+    }
+    else
+    {
+        digitalWrite(grnPin, HIGH);
+        digitalWrite(redPin, LOW);
+        digitalWrite(PUMP, LOW);
+    }
+
+    // Push sensor data to Firebase Realtime Database
     Firebase.pushInt(MOISTURE, soil_moisture);
     if (Firebase.failed())
     {
@@ -123,4 +118,59 @@ void water()
         Serial.println(Firebase.error());
         return;
     }
+}
+
+//void pump_status() {
+//  if (n==1) {
+//      Serial.println("");
+//      Serial.println("PUMP ON");
+//      digitalWrite(PUMP,HIGH);
+//      return;
+//      }
+//  else {
+//     digitalWrite(PUMP,LOW);
+//  return;
+//  }
+//}
+
+void makeIFTTTRequest()
+{
+    Serial.print("Connecting to ");
+    Serial.print(server);
+
+    WiFiClient client;
+    int retries = 5;
+    while (!!!client.connect(server, 80) && (retries-- > 0))
+    {
+        Serial.print(".");
+    }
+    Serial.println();
+    if (!!!client.connected())
+    {
+        Serial.println("Failed to connect, going back to sleep");
+    }
+
+    Serial.print("Request resource: ");
+    Serial.println(resource);
+    client.print(String("GET ") + resource +
+                 " HTTP/1.1\r\n" +
+                 "Host: " + server + "\r\n" +
+                 "Connection: close\r\n\r\n");
+
+    int timeout = 5 * 10; // 5 seconds
+    while (!!!client.available() && (timeout-- > 0))
+    {
+        delay(100);
+    }
+    if (!!!client.available())
+    {
+        Serial.println("No response");
+    }
+    while (client.available())
+    {
+        Serial.write(client.read());
+    }
+
+    Serial.println("\nclosing connection");
+    client.stop();
 }

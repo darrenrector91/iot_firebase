@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>IOT Realtime Chart</title>
+
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/media_queries.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Share+Tech+Mono"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+      crossorigin="anonymous"
+    />
+    <!-- Bootstrap switch -->
+    <link rel="stylesheet" href="vendors/bootstrap-switch.css" />
+    <!-- Google charts -->
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/charts/loader.js"
+    ></script>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./images/iot_icon.ico" />
+    <link
+      href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="container">
+      <h1 class="titleText">ESP8266 Sensor Data</h1>
+      <!-- <div id="pumpOn"></div>
+      <div id="pumpOff"></div> -->
+      <div class="wrapper">
+        <div id="lightChart" class="sensorChart"></div>
+        <div id="tempChart" class="sensorChart"></div>
+        <div id="soilMoistureChart" class="sensorChart"></div>
+        <!-- <div id="map" class="sensorChart"></div> -->
+        <div id="chart_div" class="temp_gauge"></div>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="vendors/jquery.min.js"></script>
+    <script src="js/temp_sensor.js"></script>
+    <script src="js/light_sensor.js"></script>
+    <!-- <script src="js/map.js"></script> -->
+    <script src="js/temp-gauge.js"></script>
+    <script src="js/soilMoisture_sensor.js"></script>
+    <script src="js/led.js"></script>
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/5.7.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.7.2/firebase-database.js"></script>
+    <script src="vendors/firebase.js"></script>
+    <!-- Test script -->
+    <script src="js/test.js"></script>
+    <!-- Plotly.js -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <!-- Moment.js  -->
+    <script src="https://momentjs.com/downloads/moment.js"></script>
+    <!-- Bootstrap -->
+    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+    <!-- Google Maps -->
+    <!-- <script
+      async
+      defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAn329K964J5-Koo43JrzUKgtvXFPzzXkM&callback=initMap"
+    ></script> -->
+  </body>
+</html>

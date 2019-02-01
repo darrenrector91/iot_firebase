@@ -31,7 +31,7 @@
   .sensorChart {
     width: 400px;
     margin-top: 40px;
-    box-shadow: 4px 5px 13px darkgrey;
+    /* box-shadow: 4px 5px 13px darkgrey; */
     border: 1px solid lightgrey;
   }
 

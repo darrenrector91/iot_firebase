@@ -1,10 +1,10 @@
 // Initialize Firebase
 var config = {
-    apiKey: "AIzaSyDV9fDCwUv0RintsfiXhxorU9nfGUW1X-U",
-    authDomain: "ds18b20-3f71f.firebaseapp.com",
-    databaseURL: "https://ds18b20-3f71f.firebaseio.com",
-    projectId: "ds18b20-3f71f",
-    storageBucket: "ds18b20-3f71f.appspot.com",
-    messagingSenderId: "277934569036"
+  apiKey: "AIzaSyBxjYFVtWUvowHx6Xu4UfgfslAxWZK80UI",
+  authDomain: "iot-dashboard-9e5da.firebaseapp.com",
+  databaseURL: "https://iot-dashboard-9e5da.firebaseio.com",
+  projectId: "iot-dashboard-9e5da",
+  storageBucket: "iot-dashboard-9e5da.appspot.com",
+  messagingSenderId: "656648579178"
 };
 firebase.initializeApp(config);

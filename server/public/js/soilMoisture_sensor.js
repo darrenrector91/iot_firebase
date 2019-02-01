@@ -1,15 +1,15 @@
 $(document).ready(function() {
-  const nbOfElts = 100;
+  const elementCount = 360;
 
   firebase
     .database()
     .ref("soil_moisture_ts")
-    .limitToLast(nbOfElts)
+    .limitToLast(elementCount)
     .on("value", ts_measures => {
       // 'ts_measures' is a snapshot raw Object, obtained on changed value of 'timestamped_measures' node
       // e.g. a new push to that node, but is not exploitable yet.
       // If we apply the val() method to it, we get something to start work with,
-      // i.e. an Object with the 'nbOfElts' last nodes in 'timestamped_measures' node.
+      // i.e. an Object with the 'elementCount' last nodes in 'timestamped_measures' node.
       // console.log(ts_measures.val());
       // => {-LIQgqG3c4MjNhJzlgsZ: {timestamp: 1532694324305, value: 714}, -LIQgrs_ejvxcF0MqFre: {…}, … }
 
@@ -17,8 +17,8 @@ $(document).ready(function() {
       let timestamps = [];
       let values = [];
 
-      // console.log(timestamps);
-      console.log(values);
+      console.log(timestamps);
+      // console.log(values);
 
       // Next, we iterate on each element of the 'ts_measures' raw Object
       // in order to fill the arrays.
@@ -37,6 +37,21 @@ $(document).ready(function() {
         );
         values.push(ts_measure.val().value);
       });
+
+      let ratingsCount = values.length + 1;
+      // console.log(ratingsCount);
+      let sum = values.reduce(add, 0);
+      function add(a, b) {
+        return a + b;
+      }
+      let max = Math.max(...values);
+      let min = Math.min(...values);
+      // console.log(max);
+      // console.log(min);
+
+      let avg = Math.round(sum / ratingsCount);
+      // console.log("Soil moisture sum total: ", sum);
+      // console.log("Soil moisture daily average: ", avg);
 
       // Get a reference to the DOM node that welcomes the plot drawn by Plotly.js:
       myPlotDiv = document.getElementById("soilMoistureChart");

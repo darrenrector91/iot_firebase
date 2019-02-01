@@ -1,0 +1,31 @@
+body {
+  background-color: white !important;
+  color: rgb(61, 61, 61) !important;
+  margin: 40px;
+}
+
+#login-title {
+  font-family: "Share Tech Mono", monospace;
+  /* font-family: "Montserrat", sans-serif; */
+  font-size: 50px;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+.login-image img {
+  width: 540px;
+  height: 340px;
+  position: relative;
+  right: 85px;
+}
+
+.login-section {
+  width: 400px;
+  padding: 10px;
+  margin: 55px auto;
+  height: 400px;
+}
+
+#firebaseui-auth-container {
+  margin-top: 40px !important;
+}
